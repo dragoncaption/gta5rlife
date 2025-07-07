@@ -2,31 +2,6 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <title>Hệ thống xử án Rlife</title>
   <style>
     body::before {
@@ -212,17 +187,18 @@ function updateSelectedCrimes() {
   selectedCrimes.innerHTML = "";
   let totalMinutes = 0;
 
+  const militaryChecked = document.getElementById("military-check").checked;
+  const exemptedCrimes = ["Tàng trữ vũ khí nóng", "Sử dụng vũ khí nóng trái phép"];
+
   const checkboxes = document.querySelectorAll("#crime-list input[type='checkbox']");
   checkboxes.forEach((cb, idx) => {
     if (cb.checked) {
-      const militaryChecked = document.getElementById("military-check").checked;
-      const isExempt = militaryChecked && crimes[idx].name === "Tàng trữ vũ khí nóng";
-      if (isExempt) return;
+      const crime = crimes[idx];
+      if (militaryChecked && exemptedCrimes.includes(crime.name)) return;
 
       const li = document.createElement("li");
       li.className = "flex items-center justify-between bg-gray-700 p-3 rounded-lg";
 
-      const crime = crimes[idx];
       li.innerHTML = `
         <span>${crime.name} - ${crime.minutes} phút</span>
         <button onclick="uncheckCrime(${idx})" class="text-white bg-red-600 hover:bg-red-700 px-3 py-1 rounded">X</button>
