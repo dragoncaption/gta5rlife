@@ -63,17 +63,19 @@
         <input id="suspect-id" type="text" placeholder="VD: 000999" class="w-full p-3 rounded-lg text-black"/>
       </div>
 
-<div class="mb-6 space-y-2">
-  <label class="inline-flex items-center space-x-2">
+<div class="mb-6 flex flex-col space-y-4">
+  <label class="flex items-center space-x-2">
     <input id="military-check" type="checkbox" class="accent-blue-500" onchange="updateSelectedCrimes()">
     <span>✅ Có giấy nghĩa vụ quân sự</span>
   </label>
-  <label class="inline-flex items-center space-x-2">
+
+  <label class="flex items-center space-x-2">
     <input id="consumer-law-check" type="checkbox" class="accent-blue-500" onchange="updateSelectedCrimes()">
     <span>📄 Vi phạm luật người tiêu dùng (1 hoá đơn = 5 phút):</span>
     <input id="consumer-invoices" type="number" min="0" value="5" class="w-16 p-1 rounded text-black ml-2" onchange="updateSelectedCrimes()"/>
   </label>
-  <label class="inline-flex items-center space-x-2">
+
+  <label class="flex items-center space-x-2">
     <input id="cooperate-check" type="checkbox" class="accent-blue-500" onchange="updateSelectedCrimes()">
     <span>🤝 Hợp tác điều tra:</span>
     <input id="cooperate-minutes" type="number" min="0" value="5" class="w-16 p-1 rounded text-black ml-2" onchange="updateSelectedCrimes()"/>
