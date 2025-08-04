@@ -264,7 +264,8 @@ function updateSelectedCrimes() {
 CCCD: ${suspectID}
 Người xét xử: ${judge}
 Tội danh: ${crimes.join(' + ')}
-Tổng hình phạt: ${totalMinutes} phút`;
+Tổng hình phạt: ${totalMinutes} phút
+Đã xử lý`;
 
       navigator.clipboard.writeText(text).then(() => {
         document.getElementById("copy-message").classList.remove("hidden");
